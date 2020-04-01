@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "comma-dangle": [
+      "off"
+    ],
+    "no-use-before-define": "off",
+    "class-methods-use-this": "off",
+    "no-else-return": "off",
+    "semi": [ "error", "never" ]
+  },
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "jestExpect": true,
+    "spyOn": true
+  }
+}
