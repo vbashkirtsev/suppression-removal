@@ -11,12 +11,14 @@ class clearSuppressionList {
     const events = new SparkEvents(this.spark)
     const suppressedEmails = await suppressionList.get()
 
-    await Promise.all(suppressedEmails.map(async (client) => {
+    var i = 0, length = suppressedEmails.length
+    for (; i < length; i++ ) {
+      const client = suppressedEmails[i]
       const bounces = await events.getNumberOfBounces(client)
       if (bounces < this.maxNumberOfBounces) {
         await suppressionList.remove(client)
       }
-    }))
+    }
   }
 }
 
